@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WallDrop — Stunning Free Wallpapers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" onclick="resetToHome()">
+        <span class="logo-dot"></span>WallDrop
+      </a>
+
+      <nav class="nav-links">
+        <a href="#trending-section">Trending</a>
+        <a href="#" onclick="loadCategory('nature')">Nature</a>
+        <a href="#" onclick="loadCategory('architecture')">Architecture</a>
+        <a href="#" onclick="loadCategory('abstract')">Abstract</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#trending-section" onclick="closeMobileNav()">Trending</a>
+      <a href="#" onclick="loadCategory('nature'); closeMobileNav()">Nature</a>
+      <a href="#" onclick="loadCategory('architecture'); closeMobileNav()">Architecture</a>
+      <a href="#" onclick="loadCategory('abstract'); closeMobileNav()">Abstract</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="heroSection">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Free HD &amp; 4K Wallpapers</p>
+      <h1 class="hero-title">Drop-worthy<br /><em>walls</em> for every screen.</h1>
+      <p class="hero-sub">Millions of high-res photos from Pexels, ready to download in one click.</p>
+
+      <form class="search-bar" id="searchForm" onsubmit="handleSearch(event)">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search mountains, neon city, dark forest…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+
+      <div class="quick-tags">
+        <span class="tag-label">Popular:</span>
+        <button class="tag" onclick="quickSearch('galaxy')">Galaxy</button>
+        <button class="tag" onclick="quickSearch('ocean')">Ocean</button>
+        <button class="tag" onclick="quickSearch('minimal')">Minimal</button>
+        <button class="tag" onclick="quickSearch('cyberpunk')">Cyberpunk</button>
+        <button class="tag" onclick="quickSearch('forest')">Forest</button>
+        <button class="tag" onclick="quickSearch('aurora')">Aurora</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRENDING SECTION -->
+  <section class="trending-section" id="trending-section">
+    <div class="section-header">
+      <div>
+        <p class="section-eyebrow">Right now</p>
+        <h2 class="section-title">Trending Wallpapers</h2>
+      </div>
+      <button class="see-all-btn" onclick="scrollToGallery()">See all ↓</button>
+    </div>
+    <div class="trending-scroll" id="trendingScroll">
+      <!-- trending cards injected here -->
+    </div>
+  </section>
+
+  <!-- MAIN GALLERY -->
+  <section class="gallery-section" id="gallerySection">
+    <div class="gallery-header" id="galleryHeader">
+      <div>
+        <p class="section-eyebrow" id="galleryEyebrow">Discover</p>
+        <h2 class="section-title" id="galleryTitle">All Wallpapers</h2>
+      </div>
+      <div class="filter-row">
+        <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+        <button class="filter-btn" onclick="setFilter('landscape', this)">Landscape</button>
+        <button class="filter-btn" onclick="setFilter('portrait', this)">Portrait</button>
+        <button class="filter-btn" onclick="setFilter('square', this)">Square</button>
+      </div>
+    </div>
+
+    <div class="masonry-grid" id="masonryGrid">
+      <!-- wallpaper cards injected here -->
+    </div>
+
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+      <p>Loading more wallpapers…</p>
+    </div>
+
+    <div class="end-message" id="endMessage" style="display:none">
+      <p>You've seen everything. Try a new search!</p>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <div class="lb-img-wrap">
+        <img id="lbImage" src="" alt="" />
+        <div class="lb-skeleton" id="lbSkeleton"></div>
+      </div>
+      <div class="lb-info">
+        <div class="lb-meta">
+          <div class="lb-photographer">
+            <div class="lb-avatar" id="lbAvatar"></div>
+            <div>
+              <p class="lb-name" id="lbPhotographer">—</p>
+              <p class="lb-credit">via Pexels</p>
+            </div>
+          </div>
+          <div class="lb-dims" id="lbDims">— × —</div>
+        </div>
+        <div class="lb-actions">
+          <button class="lb-download-btn" id="lbDownloadBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download Original
+          </button>
+          <a class="lb-pexels-link" id="lbPexelsLink" href="#" target="_blank" rel="noopener">
+            View on Pexels ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <footer class="site-footer">
+    <p>Photos provided by <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>. Free to use under the Pexels License.</p>
+    <p class="footer-brand">WallDrop &copy; 2026</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
