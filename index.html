@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WallDrop — Stunning Free Wallpapers</title>
+  <title>WallDrop -- Stunning Free Wallpapers</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,6 +34,272 @@
                 <a href="#" onclick="loadCategory('aurora borealis');closeDropdown()">🌌 Aurora</a>
                 <a href="#" onclick="loadCategory('waterfall');closeDropdown()">💧 Waterfall</a>
                 <a href="#" onclick="loadCategory('flowers');closeDropdown()">🌸 Flowers</a>
+              </div>
+              <div class="dropdown-col">
+                <p class="dropdown-col-label">Urban</p>
+                <a href="#" onclick="loadCategory('architecture');closeDropdown()">🏛 Architecture</a>
+                <a href="#" onclick="loadCategory('city skyline night');closeDropdown()">🌃 City Night</a>
+                <a href="#" onclick="loadCategory('street photography');closeDropdown()">📸 Street</a>
+                <a href="#" onclick="loadCategory('cyberpunk city');closeDropdown()">🤖 Cyberpunk</a>
+                <a href="#" onclick="loadCategory('interior design');closeDropdown()">🛋 Interior</a>
+                <a href="#" onclick="loadCategory('neon lights');closeDropdown()">💡 Neon</a>
+                <a href="#" onclick="loadCategory('bridge');closeDropdown()">🌉 Bridges</a>
+              </div>
+              <div class="dropdown-col">
+                <p class="dropdown-col-label">Space & Art</p>
+                <a href="#" onclick="loadCategory('galaxy space');closeDropdown()">🌌 Galaxy</a>
+                <a href="#" onclick="loadCategory('nebula');closeDropdown()">✨ Nebula</a>
+                <a href="#" onclick="loadCategory('abstract art');closeDropdown()">🎨 Abstract</a>
+                <a href="#" onclick="loadCategory('minimal dark');closeDropdown()">⬛ Minimal Dark</a>
+                <a href="#" onclick="loadCategory('minimal white');closeDropdown()">⬜ Minimal Light</a>
+                <a href="#" onclick="loadCategory('geometric pattern');closeDropdown()">🔷 Geometric</a>
+                <a href="#" onclick="loadCategory('gradient colors');closeDropdown()">🌈 Gradient</a>
+              </div>
+              <div class="dropdown-col">
+                <p class="dropdown-col-label">Lifestyle</p>
+                <a href="#" onclick="loadCategory('animals wildlife');closeDropdown()">🐾 Animals</a>
+                <a href="#" onclick="loadCategory('travel adventure');closeDropdown()">✈ Travel</a>
+                <a href="#" onclick="loadCategory('vintage retro');closeDropdown()">📻 Vintage</a>
+                <a href="#" onclick="loadCategory('dark aesthetic');closeDropdown()">🌑 Dark</a>
+                <a href="#" onclick="loadCategory('gaming setup');closeDropdown()">🎮 Gaming</a>
+                <a href="#" onclick="loadCategory('cars automotive');closeDropdown()">🚗 Cars</a>
+                <a href="#" onclick="loadCategory('food photography');closeDropdown()">🍜 Food</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" onclick="loadCategory('dark aesthetic')">Dark</a>
+        <a href="#" onclick="loadCategory('minimal')">Minimal</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#trending-section" onclick="closeMobileNav()">🔥 Trending</a>
+      <div class="mobile-nav-section">
+        <p class="mobile-nav-label">Nature</p>
+        <a href="#" onclick="loadCategory('nature'); closeMobileNav()">🌿 Nature</a>
+        <a href="#" onclick="loadCategory('ocean'); closeMobileNav()">🌊 Ocean</a>
+        <a href="#" onclick="loadCategory('forest'); closeMobileNav()">🌲 Forest</a>
+        <a href="#" onclick="loadCategory('mountains'); closeMobileNav()">🏔 Mountains</a>
+        <a href="#" onclick="loadCategory('desert'); closeMobileNav()">🏜 Desert</a>
+        <a href="#" onclick="loadCategory('aurora borealis'); closeMobileNav()">🌌 Aurora</a>
+        <a href="#" onclick="loadCategory('waterfall'); closeMobileNav()">💧 Waterfall</a>
+        <a href="#" onclick="loadCategory('flowers'); closeMobileNav()">🌸 Flowers</a>
+      </div>
+      <div class="mobile-nav-section">
+        <p class="mobile-nav-label">Urban</p>
+        <a href="#" onclick="loadCategory('architecture'); closeMobileNav()">🏛 Architecture</a>
+        <a href="#" onclick="loadCategory('city skyline night'); closeMobileNav()">🌃 City Night</a>
+        <a href="#" onclick="loadCategory('street photography'); closeMobileNav()">📸 Street</a>
+        <a href="#" onclick="loadCategory('cyberpunk city'); closeMobileNav()">🤖 Cyberpunk</a>
+        <a href="#" onclick="loadCategory('neon lights'); closeMobileNav()">💡 Neon</a>
+        <a href="#" onclick="loadCategory('bridge'); closeMobileNav()">🌉 Bridges</a>
+      </div>
+      <div class="mobile-nav-section">
+        <p class="mobile-nav-label">Space & Art</p>
+        <a href="#" onclick="loadCategory('galaxy space'); closeMobileNav()">🌌 Galaxy</a>
+        <a href="#" onclick="loadCategory('nebula'); closeMobileNav()">✨ Nebula</a>
+        <a href="#" onclick="loadCategory('abstract art'); closeMobileNav()">🎨 Abstract</a>
+        <a href="#" onclick="loadCategory('minimal dark'); closeMobileNav()">⬛ Minimal Dark</a>
+        <a href="#" onclick="loadCategory('geometric pattern'); closeMobileNav()">🔷 Geometric</a>
+        <a href="#" onclick="loadCategory('gradient colors'); closeMobileNav()">🌈 Gradient</a>
+      </div>
+      <div class="mobile-nav-section">
+        <p class="mobile-nav-label">Lifestyle</p>
+        <a href="#" onclick="loadCategory('animals wildlife'); closeMobileNav()">🐾 Animals</a>
+        <a href="#" onclick="loadCategory('travel adventure'); closeMobileNav()">✈ Travel</a>
+        <a href="#" onclick="loadCategory('vintage retro'); closeMobileNav()">📻 Vintage</a>
+        <a href="#" onclick="loadCategory('dark aesthetic'); closeMobileNav()">🌑 Dark</a>
+        <a href="#" onclick="loadCategory('gaming setup'); closeMobileNav()">🎮 Gaming</a>
+        <a href="#" onclick="loadCategory('cars automotive'); closeMobileNav()">🚗 Cars</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="heroSection">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Free HD &amp; 4K Wallpapers</p>
+      <h1 class="hero-title">Drop-worthy<br /><em>walls</em> for every screen.</h1>
+      <p class="hero-sub">Millions of high-res photos from Pexels, ready to download in one click.</p>
+
+      <form class="search-bar" id="searchForm" onsubmit="handleSearch(event)">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search mountains, neon city, dark forest…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+
+      <div class="quick-tags">
+        <span class="tag-label">Popular:</span>
+        <button class="tag" onclick="quickSearch('galaxy space')">🌌 Galaxy</button>
+        <button class="tag" onclick="quickSearch('ocean waves')">🌊 Ocean</button>
+        <button class="tag" onclick="quickSearch('minimal dark')">⬛ Minimal</button>
+        <button class="tag" onclick="quickSearch('cyberpunk city')">🤖 Cyberpunk</button>
+        <button class="tag" onclick="quickSearch('forest')">🌲 Forest</button>
+        <button class="tag" onclick="quickSearch('aurora borealis')">🌌 Aurora</button>
+        <button class="tag" onclick="quickSearch('mountains')">🏔 Mountains</button>
+        <button class="tag" onclick="quickSearch('neon lights')">💡 Neon</button>
+        <button class="tag" onclick="quickSearch('abstract art')">🎨 Abstract</button>
+        <button class="tag" onclick="quickSearch('dark aesthetic')">🌑 Dark</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRENDING SECTION -->
+  <section class="trending-section" id="trending-section">
+    <div class="section-header">
+      <div>
+        <p class="section-eyebrow">Right now</p>
+        <h2 class="section-title">Trending Wallpapers</h2>
+      </div>
+      <button class="see-all-btn" onclick="scrollToGallery()">See all ↓</button>
+    </div>
+    <div class="trending-scroll" id="trendingScroll">
+      <!-- trending cards injected here -->
+    </div>
+  </section>
+
+  <!-- CATEGORIES SECTION -->
+  <section class="categories-section">
+    <div class="section-header">
+      <div>
+        <p class="section-eyebrow">Browse by mood</p>
+        <h2 class="section-title">Categories</h2>
+      </div>
+    </div>
+    <div class="categories-grid">
+      <button class="cat-card cat-nature"    onclick="loadCategory('nature landscape')">
+        <span class="cat-icon">🌿</span><span class="cat-name">Nature</span><span class="cat-count">Forests · Oceans · Mountains</span>
+      </button>
+      <button class="cat-card cat-space"     onclick="loadCategory('galaxy space nebula')">
+        <span class="cat-icon">🌌</span><span class="cat-name">Space</span><span class="cat-count">Galaxy · Nebula · Stars</span>
+      </button>
+      <button class="cat-card cat-urban"     onclick="loadCategory('city skyline architecture')">
+        <span class="cat-icon">🌆</span><span class="cat-name">Urban</span><span class="cat-count">Skylines · Streets · Buildings</span>
+      </button>
+      <button class="cat-card cat-abstract"  onclick="loadCategory('abstract art colorful')">
+        <span class="cat-icon">🎨</span><span class="cat-name">Abstract</span><span class="cat-count">Art · Patterns · Colors</span>
+      </button>
+      <button class="cat-card cat-dark"      onclick="loadCategory('dark moody aesthetic')">
+        <span class="cat-icon">🌑</span><span class="cat-name">Dark</span><span class="cat-count">Moody · Gothic · Night</span>
+      </button>
+      <button class="cat-card cat-minimal"   onclick="loadCategory('minimalist clean white')">
+        <span class="cat-icon">◻</span><span class="cat-name">Minimal</span><span class="cat-count">Clean · Simple · Zen</span>
+      </button>
+      <button class="cat-card cat-neon"      onclick="loadCategory('neon cyberpunk lights')">
+        <span class="cat-icon">💡</span><span class="cat-name">Neon</span><span class="cat-count">Cyberpunk · Glow · Retro</span>
+      </button>
+      <button class="cat-card cat-animals"   onclick="loadCategory('animals wildlife')">
+        <span class="cat-icon">🐾</span><span class="cat-name">Animals</span><span class="cat-count">Wildlife · Pets · Birds</span>
+      </button>
+      <button class="cat-card cat-travel"    onclick="loadCategory('travel adventure scenic')">
+        <span class="cat-icon">✈</span><span class="cat-name">Travel</span><span class="cat-count">Beaches · Roads · World</span>
+      </button>
+      <button class="cat-card cat-gaming"    onclick="loadCategory('gaming setup pc rgb')">
+        <span class="cat-icon">🎮</span><span class="cat-name">Gaming</span><span class="cat-count">Setup · RGB · Desk</span>
+      </button>
+      <button class="cat-card cat-cars"      onclick="loadCategory('cars sports automotive')">
+        <span class="cat-icon">🚗</span><span class="cat-name">Cars</span><span class="cat-count">Sports · Luxury · Roads</span>
+      </button>
+      <button class="cat-card cat-vintage"   onclick="loadCategory('vintage retro film')">
+        <span class="cat-icon">📻</span><span class="cat-name">Vintage</span><span class="cat-count">Retro · Film · Classic</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- MAIN GALLERY -->
+  <section class="gallery-section" id="gallerySection">
+    <div class="gallery-header" id="galleryHeader">
+      <div>
+        <p class="section-eyebrow" id="galleryEyebrow">Discover</p>
+        <h2 class="section-title" id="galleryTitle">All Wallpapers</h2>
+      </div>
+      <div class="filter-row">
+        <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+        <button class="filter-btn" onclick="setFilter('landscape', this)">Landscape</button>
+        <button class="filter-btn" onclick="setFilter('portrait', this)">Portrait</button>
+        <button class="filter-btn" onclick="setFilter('square', this)">Square</button>
+      </div>
+    </div>
+
+    <div class="masonry-grid" id="masonryGrid">
+      <!-- wallpaper cards injected here -->
+    </div>
+
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+      <p>Loading more wallpapers…</p>
+    </div>
+
+    <div class="end-message" id="endMessage" style="display:none">
+      <p>You've seen everything. Try a new search!</p>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <div class="lb-img-wrap">
+        <img id="lbImage" src="" alt="" />
+        <div class="lb-skeleton" id="lbSkeleton"></div>
+      </div>
+      <div class="lb-info">
+        <div class="lb-meta">
+          <div class="lb-photographer">
+            <div class="lb-avatar" id="lbAvatar"></div>
+            <div>
+              <p class="lb-name" id="lbPhotographer">--</p>
+              <p class="lb-credit">via Pexels</p>
+            </div>
+          </div>
+          <div class="lb-dims" id="lbDims">-- × --</div>
+        </div>
+        <div class="lb-actions">
+          <button class="lb-download-btn" id="lbDownloadBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download Original
+          </button>
+          <a class="lb-pexels-link" id="lbPexelsLink" href="#" target="_blank" rel="noopener">
+            View on Pexels ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <footer class="site-footer">
+    <p>Photos provided by <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>. Free to use under the Pexels License.</p>
+    <p class="footer-brand">WallDrop &copy; 2026</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
               </div>
               <div class="dropdown-col">
                 <p class="dropdown-col-label">Urban</p>
