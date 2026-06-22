@@ -361,6 +361,11 @@ function closeMobileNav() {
   mobileNav.classList.remove('open');
 }
 
+function closeDropdown() {
+  // blur the toggle so dropdown closes on mouse-leave
+  document.activeElement?.blur();
+}
+
 /* ── Toast ────────────────────────────────────────────────── */
 let toastTimer;
 function showToast(msg) {
@@ -417,3 +422,4 @@ function escHtml(str) {
   loadTrending();
   loadPhotos();
 })();
+
